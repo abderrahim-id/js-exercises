@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  padding: 20px;
+  margin: 0;
+}
+
+button {
+  margin: 10px 0;
+}
+
+.separator {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.res {
+  font-weight: bold;
+  margin: 5px 0;
+}
+.res-error {
+  color: red;
+}
+.res-ok {
+  color: green;
+}
+
+.myicon {
+    margin-left: 5px;
+    font-size: 1.5em;
+}
+
+/* .user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+.mycard {
+    margin: 10px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
