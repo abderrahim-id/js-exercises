@@ -46,8 +46,6 @@ for (let i = 0; i < options.length; i++) {
     select.appendChild(el);
 }
 
-
-
 window.onload = function () {
 
     // --------------------------- 5
@@ -59,7 +57,6 @@ window.onload = function () {
         } 
         else {    document.getElementById("user-log").innerHTML = "Anonymous";    }
     }
-
     // --------------------------- 6
     window.document.body.insertAdjacentHTML('beforeend', '<button id="postsbutton" class="btn btn-info" onclick="fetchPosts()">Fetch Posts</button>');
 }
@@ -89,7 +86,6 @@ async function fetchPosts() {
         let stored = JSON.parse(session);
         displayData(stored);
     }
-
 }
 
 function displayData(data) {
@@ -109,12 +105,7 @@ function displayData(data) {
     });
 }
 
-
-
-
-
 // ------------------------ 9
-
 
 let numbers = [];
 
@@ -126,11 +117,8 @@ function addNumber() {
 
 function checkTarget() {
     let x = document.getElementById("targetNum").value;
-
     let gotten = false;
-
     for (let i = 0; i < numbers.length; i++) {
-
         for (let j = 1; j < numbers.length; j++) {
             let next = +numbers[i] + +numbers[j];
             if (i === j) continue;
@@ -142,7 +130,6 @@ function checkTarget() {
         }
         if (gotten) break;
     }
-
     if (!gotten) { document.getElementById("resultSpan").innerHTML = "No matched numbers founded 😕"; }
 }
 
