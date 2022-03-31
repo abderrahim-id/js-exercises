@@ -3,7 +3,6 @@
 
 function createTextDiv(text) {
     node = document.getElementById('MyID');
-    // node = document.getElementsByClassName("example");
     const element = '<div class="alert alert-info" role="alert"> ' + text + ' </div>';
     node.insertAdjacentHTML('afterend', element); // beforebegin, afterbegin, beforeend, afterend
 }
@@ -21,7 +20,6 @@ function textChecker() {
     else { element = '<div class="res res-ok"> Ok </div>' }
 
     node.insertAdjacentHTML('beforebegin', element);
-
 }
 
 // --------------------------- 3
@@ -32,17 +30,17 @@ object.addEventListener("mouseout", () => { object.setAttribute('src', 'https://
 
 // --------------------------- 4
 
-var select = document.getElementById("selectName");
-var options = [
+let select = document.getElementById("selectName");
+let options = [
     { id: 1, name: "Gino" },
     { id: 2, name: "Pino" },
     { id: 3, name: "Mario" },
     { id: 4, name: "Rosario" }
 ];
 
-for (var i = 0; i < options.length; i++) {
-    var opt = options[i];
-    var el = document.createElement("option");
+for (let i = 0; i < options.length; i++) {
+    let opt = options[i];
+    let el = document.createElement("option");
     el.textContent = opt.name;
     el.value = opt.id;
     select.appendChild(el);
@@ -54,13 +52,12 @@ window.onload = function () {
 
     // --------------------------- 5
 
-    var name = prompt('Hello, please insert your name, or cancel');
+    let name = prompt('Hello, please insert your name, or cancel');
     if (name) {  // alert(name);
         if (confirm("Do you want to display your name on the page 😁 ? otherwise cancel 😊")) {
             document.getElementById("user-log").innerHTML = name;
-        } else {
-            document.getElementById("user-log").innerHTML = "Anonymous";
-        }
+        } 
+        else {    document.getElementById("user-log").innerHTML = "Anonymous";    }
     }
 
     // --------------------------- 6
@@ -82,27 +79,18 @@ async function fetchPosts() {
         fetch(url)
             .then((response) => { return response.json(); })
             .then((data) => {
-
                 let thedata = JSON.stringify(data);
                 sessionStorage.setItem('products', thedata);
-
                 displayData(data);
-
             })
             .catch(function (error) { console.log(error); });
-
     } else {
-
         console.log("Data was saved in the session");
-
         let stored = JSON.parse(session);
         displayData(stored);
     }
 
 }
-
-
-// save data in a session
 
 function displayData(data) {
     let products = data;
@@ -131,24 +119,22 @@ function displayData(data) {
 let numbers = [];
 
 function addNumber() {
-    var x = document.getElementById("myNumber").value;
-    console.log("Added number: " + x);
+    let x = document.getElementById("myNumber").value;
     numbers.push(x);
     document.getElementById("numbersSpan").innerHTML = numbers;
-    console.log("Numbers list: " + numbers)
 }
 
 function checkTarget() {
-    var x = document.getElementById("targetNum").value;
+    let x = document.getElementById("targetNum").value;
 
     let gotten = false;
 
     for (let i = 0; i < numbers.length; i++) {
-       
+
         for (let j = 1; j < numbers.length; j++) {
             let next = +numbers[i] + +numbers[j];
-            if ( i === j ) continue;
-            if ( +x === +next ) {
+            if (i === j) continue;
+            if (+x === +next) {
                 gotten = true;
                 document.getElementById("resultSpan").innerHTML = "Match Found 😁 , positions: " + i + " , " + j;
             }
@@ -163,7 +149,7 @@ function checkTarget() {
 // -------------------------- 10
 
 function checkText() {
-    var text = document.getElementById("theText").value;
+    let text = document.getElementById("theText").value;
     const myArray = text.split(" ");
     let filteredArray = myArray.filter(e => e !== '');
     let word = filteredArray[filteredArray.length - 1];
